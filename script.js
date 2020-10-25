@@ -87,6 +87,63 @@ minúscula (utilizar indexOf, substring, toUpperCase, toLowerCase y el operador 
 var myString9 = "raDiuM rOckeT";
 var myString10 = myString9.substring(0,myString9.indexOf(" "));
 var myString11 = myString9.substring(myString9.indexOf(" ")+1);
-myString10 = myString10.substring(0,1).toUpperCase() + myString10.substring(1).toLowerCase()
-myString11 = myString11.substring(0,1).toUpperCase() + myString11.substring(1).toLowerCase()
-var myString12 = myString10 + " " + myString11
+myString10 = myString10.substring(0,1).toUpperCase() + myString10.substring(1).toLowerCase();
+myString11 = myString11.substring(0,1).toUpperCase() + myString11.substring(1).toLowerCase();
+var myString12 = myString10 + " " + myString11;
+
+// Ejercicio N°3: Strings
+
+/*
+a) Dado el siguiente array: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] mostrar por
+consola los meses 5 y 11 (utilizar console.log)
+*/
+
+var myArray = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+console.log(myArray[4], myArray[10]);
+
+/*
+b) Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).
+*/
+
+myArray.sort();
+console.log(myArray);
+
+/*
+c) Agregar un elemento al principio y al final del array (utilizar unshift y push).
+*/
+
+myArray.unshift("Radium");
+myArray.push("Rocket");
+console.log(myArray);
+
+/*
+d) Quitar un elemento del principio y del final del array (utilizar shift y pop).
+*/
+
+myArray.shift();
+myArray.pop();
+console.log(myArray);
+
+/*
+e) Invertir el orden del array (utilizar reverse)
+*/
+
+myArray.reverse();
+console.log(myArray);
+
+/*
+f) Unir todos los elementos del array en un único string donde cada mes este
+separado por un guión - (utilizar join).
+*/
+
+var array2string = myArray.join("-");
+console.log(array2string);
+
+/*
+g) Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
+*/
+
+myArray2 = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var myArrayCopy = myArray2.slice(4,11);
+console.log(myArrayCopy);
