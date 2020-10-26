@@ -202,7 +202,7 @@ for de JavaScript para mostrar una alerta utilizando cada una de las palabras.
 */
 
 var myArray = ["pen" , "pencil" , "eraser" , "ruler" , "square"];
-for (var i = 0; i < myArray.length; i++){
+for (var i = 0; i < myArray.length; i++) {
     alert(myArray[i]);
 }
 
@@ -211,7 +211,7 @@ b) Al array anterior convertir la primera letra de cada palabra en mayúscula y 
 una alerta por cada palabra modificada.
 */
 
-for (var i = 0; i < myArray.length; i++){
+for (var i = 0; i < myArray.length; i++) {
     myArray[i] = myArray[i].substring(0,1).toUpperCase() + myArray[i].substring(1);
     alert(myArray[i]);
 }
@@ -224,7 +224,7 @@ variable sentence. Al final mostrar una única alerta con la cadena completa.
 
 var myArray = ["pen" , "pencil" , "eraser" , "ruler" , "square"];
 var sentence  = [];
-for (var i = 0; i < myArray.length; i++){
+for (var i = 0; i < myArray.length; i++) {
     sentence.push(myArray[i]);
 }
 alert(sentence);
@@ -237,7 +237,53 @@ la consola del navegador el array final (utilizar console.log).
 */
 
 var myArray3  = [];
-for (var i = 0; i < 10; i++){
+for (var i = 0; i < 10; i++) {
     myArray3.push(i);
 }
 console.log(myArray3);
+
+// Ejercicio N°6: Funciones
+
+/*
+a) Crear una función suma que reciba dos valores numéricos y retorne el resultado.
+Ejecutar la función y guardar el resultado en una variable, mostrando el valor de dicha
+variable en la consola del navegador.
+*/
+
+function mySum(myNum1,myNum2) {
+    return myNum1 + myNum2;
+}
+
+var myRes = mySum(2,5);
+console.log(myRes);
+
+/*
+b) A la función suma anterior, agregarle una validación para controlar si alguno de los
+parámetros no es un número, mostrar una alerta aclarando que uno de los parámetros tiene
+error y retornar el valor NaN como resultado.*/
+
+function mySum2(myNum1,myNum2) {
+    if (typeof(myNum1) === 'number' && typeof(myNum2) === 'number') {
+        return myNum1 + myNum2;
+    } else {
+        alert("Al menos uno de los parametros ingresados no es un numero")
+        return NaN;
+    }
+}
+var myRes = mySum2("Q",5);
+console.log(myRes);
+
+/*
+c) Crear una función validate integer que reciba un número como parámetro y verdadero si
+es un número entero.
+*/
+
+function validateInteger(myNum) {
+    if (Number.isInteger(myNum)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(validateInteger(55.2));
