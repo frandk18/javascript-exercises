@@ -250,27 +250,27 @@ Ejecutar la función y guardar el resultado en una variable, mostrando el valor 
 variable en la consola del navegador.
 */
 
-function mySum(myNum1,myNum2) {
-    return myNum1 + myNum2;
+function mySum2(num1,num2) {
+    return num1 + num2;
 }
-
-var myRes = mySum(2,5);
+var myRes = mySum2(2,5);
 console.log(myRes);
 
 /*
 b) A la función suma anterior, agregarle una validación para controlar si alguno de los
 parámetros no es un número, mostrar una alerta aclarando que uno de los parámetros tiene
-error y retornar el valor NaN como resultado.*/
+error y retornar el valor NaN como resultado.
+*/
 
-function mySum2(myNum1,myNum2) {
-    if (typeof(myNum1) === 'number' && typeof(myNum2) === 'number') {
-        return myNum1 + myNum2;
+function mySum3(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number') {
+        return num1 + num2;
     } else {
         alert("Al menos uno de los parametros ingresados no es un numero")
         return NaN;
     }
 }
-var myRes = mySum2("Q",5);
+var myRes = mySum3("Q",5);
 console.log(myRes);
 
 /*
@@ -287,3 +287,57 @@ function validateInteger(myNum) {
     }
 }
 console.log(validateInteger(55.2));
+
+/*
+d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números
+sean enteros. En caso que haya decimales mostrar un alerta con elnerror y retorna el
+número convertido a entero (redondeado).
+*/
+
+function mySum4(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number') {
+        if (!validateInteger(num1)) { 
+            num1 = Math.round(num1);
+            alert("El primer parametro no era entero, se convirtio a: " + num1);
+            }
+        if (!validateInteger(num2)) {
+            num2 = Math.round(num2);
+            alert("El segundo parametro no era entero, se convirtio a: " + num2);
+        }
+        return num1 + num2;
+    } else {
+        alert("Al menos uno de los parametros ingresados no es un numero")
+        return NaN;
+    }
+}
+console.log(mySum4(600.5,6.01));
+
+/*
+e) Convertir la validación del ejercicio 6b) en una función separada y llamarla dentro de la
+función suma probando que todo siga funcionando igual.
+*/
+
+function validateNum(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number'){
+        return true;
+    } else {
+        alert("Al menos uno de los parametros ingresados no es un numero")
+        return false;
+    }
+}
+function mySum5(num1,num2) {
+    if (validateNum(num1,num2)) {
+        if (!validateInteger(num1)) {
+            num1 = Math.round(num1);
+            alert("El primer parametro no era entero, se convirtio a: " + num1);
+            }
+        if (!validateInteger(num2)) {
+            num2 = Math.round(num2);
+            alert("El segundo parametro no era entero, se convirtio a: " + num2);
+        }
+        return num1 + num2;
+    } else {
+        return NaN;
+    }
+}
+console.log(mySum5(6.5,10)); 
