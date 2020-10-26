@@ -71,7 +71,7 @@ demás en minúscula. Guardar el resultado en una nueva variable
 */
 
 var myString6 = "raDiumRockeT";
-var mystring7 = myString6.substring(0,1).toUpperCase() + myString6.substring(1).toLowerCase();
+var myString7 = myString6.substring(0,1).toUpperCase() + myString6.substring(1).toLowerCase();
 console.log(myString7);
 
 /*
