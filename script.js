@@ -9,6 +9,7 @@ en una 3er variable.
 var myNum1 = 1;
 var myNum2 = 2;
 var mySum = myNum1 + myNum2;
+console.log(mySum);
 
 /*
 b) Crear dos variables de tipo String y concatenarlas guardando
@@ -18,6 +19,7 @@ el resultado en una 3er variable.
 var myStr1 = "Hello";
 var myStr2 = "World";
 var myStr3 = myStr1 + myStr2;
+console.log(myStr3);
 
 /*
 c) Crear dos variables de tipo String y sumar el largo de cada
@@ -28,6 +30,7 @@ la suma una 3er variable (utilizar length).
 var myStr4 = "Hello";
 var myStr5 = "World";
 var myQchar = myStr4.length + myStr5.length;
+console.log(myQchar);
 
 // Ejercicio N°2: Strings
 
@@ -38,6 +41,7 @@ y convertir todo el texto en mayúscula (utilizar toUpperCase).
 
 var myString1 = "radiumrocket";
 myString1 = myString1.toUpperCase();
+console.log(myString1);
 
 /*
 b) Crear una variable de tipo string con al menos 10 caracteres
@@ -47,6 +51,7 @@ el resultado en una nueva variable (utilizar substring).
 
 var myString2 = "radiumrocket";
 var myString3 = myString2.substring(0,5);
+console.log(myString3);
 
 /*
 c) Crear una variable de tipo string con al menos 10 caracteres y
@@ -56,6 +61,7 @@ resultado en una nueva variable (utilizar substring).
 
 var myString4 = "radiumrocket";
 var myString5 = myString4.substring(myString4.length-3);
+console.log(myString5);
 
 /*
 d) Crear una variable de tipo string con al menos 10 caracteres y
@@ -66,6 +72,7 @@ demás en minúscula. Guardar el resultado en una nueva variable
 
 var myString6 = "raDiumRockeT";
 var mystring7 = myString6.substring(0,1).toUpperCase() + myString6.substring(1).toLowerCase();
+console.log(myString7);
 
 /*
 e) Crear una variable de tipo string con al menos 10 caracteres y
@@ -75,6 +82,7 @@ en blanco y guardarla en una variable (utilizar indexOf).
 
 var myString8 = "radium rocket";
 var firstSpace = myString8.indexOf(" ");
+console.log(firstSpace);
 
 /*
 f) Crear una variable de tipo string con al menos 2 palabras largas
@@ -90,6 +98,7 @@ var myString11 = myString9.substring(myString9.indexOf(" ")+1);
 myString10 = myString10.substring(0,1).toUpperCase() + myString10.substring(1).toLowerCase();
 myString11 = myString11.substring(0,1).toUpperCase() + myString11.substring(1).toLowerCase();
 var myString12 = myString10 + " " + myString11;
+console.log(myString12);
 
 // Ejercicio N°3: Arrays
 
