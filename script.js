@@ -305,7 +305,7 @@ número convertido a entero (redondeado).
 
 function mySum4(num1,num2) {
     if (typeof(num1) === 'number' && typeof(num2) === 'number') {
-        if (!validateInteger(num1)) { 
+        if (!validateInteger(num1)) {
             num1 = Math.round(num1);
             alert("El primer parametro no era entero, se convirtio a: " + num1);
             }
@@ -349,4 +349,4 @@ function mySum5(num1,num2) {
         return NaN;
     }
 }
-console.log(mySum5(6.5,10)); 
+console.log(mySum5(6.5,10));
