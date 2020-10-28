@@ -9,6 +9,7 @@ en una 3er variable.
 var myNum1 = 1;
 var myNum2 = 2;
 var mySum = myNum1 + myNum2;
+console.log(mySum);
 
 /*
 b) Crear dos variables de tipo String y concatenarlas guardando
@@ -18,6 +19,7 @@ el resultado en una 3er variable.
 var myStr1 = "Hello";
 var myStr2 = "World";
 var myStr3 = myStr1 + myStr2;
+console.log(myStr3);
 
 /*
 c) Crear dos variables de tipo String y sumar el largo de cada
@@ -28,6 +30,7 @@ la suma una 3er variable (utilizar length).
 var myStr4 = "Hello";
 var myStr5 = "World";
 var myQchar = myStr4.length + myStr5.length;
+console.log(myQchar);
 
 // Ejercicio N°2: Strings
 
@@ -38,6 +41,7 @@ y convertir todo el texto en mayúscula (utilizar toUpperCase).
 
 var myString1 = "radiumrocket";
 myString1 = myString1.toUpperCase();
+console.log(myString1);
 
 /*
 b) Crear una variable de tipo string con al menos 10 caracteres
@@ -47,6 +51,7 @@ el resultado en una nueva variable (utilizar substring).
 
 var myString2 = "radiumrocket";
 var myString3 = myString2.substring(0,5);
+console.log(myString3);
 
 /*
 c) Crear una variable de tipo string con al menos 10 caracteres y
@@ -56,6 +61,7 @@ resultado en una nueva variable (utilizar substring).
 
 var myString4 = "radiumrocket";
 var myString5 = myString4.substring(myString4.length-3);
+console.log(myString5);
 
 /*
 d) Crear una variable de tipo string con al menos 10 caracteres y
@@ -65,7 +71,8 @@ demás en minúscula. Guardar el resultado en una nueva variable
 */
 
 var myString6 = "raDiumRockeT";
-var mystring7 = myString6.substring(0,1).toUpperCase() + myString6.substring(1).toLowerCase();
+var myString7 = myString6.substring(0,1).toUpperCase() + myString6.substring(1).toLowerCase();
+console.log(myString7);
 
 /*
 e) Crear una variable de tipo string con al menos 10 caracteres y
@@ -75,6 +82,7 @@ en blanco y guardarla en una variable (utilizar indexOf).
 
 var myString8 = "radium rocket";
 var firstSpace = myString8.indexOf(" ");
+console.log(firstSpace);
 
 /*
 f) Crear una variable de tipo string con al menos 2 palabras largas
@@ -90,6 +98,7 @@ var myString11 = myString9.substring(myString9.indexOf(" ")+1);
 myString10 = myString10.substring(0,1).toUpperCase() + myString10.substring(1).toLowerCase();
 myString11 = myString11.substring(0,1).toUpperCase() + myString11.substring(1).toLowerCase();
 var myString12 = myString10 + " " + myString11;
+console.log(myString12);
 
 // Ejercicio N°3: Arrays
 
@@ -250,27 +259,27 @@ Ejecutar la función y guardar el resultado en una variable, mostrando el valor 
 variable en la consola del navegador.
 */
 
-function mySum(myNum1,myNum2) {
-    return myNum1 + myNum2;
+function mySum2(num1,num2) {
+    return num1 + num2;
 }
-
-var myRes = mySum(2,5);
+var myRes = mySum2(2,5);
 console.log(myRes);
 
 /*
 b) A la función suma anterior, agregarle una validación para controlar si alguno de los
 parámetros no es un número, mostrar una alerta aclarando que uno de los parámetros tiene
-error y retornar el valor NaN como resultado.*/
+error y retornar el valor NaN como resultado.
+*/
 
-function mySum2(myNum1,myNum2) {
-    if (typeof(myNum1) === 'number' && typeof(myNum2) === 'number') {
-        return myNum1 + myNum2;
+function mySum3(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number') {
+        return num1 + num2;
     } else {
         alert("Al menos uno de los parametros ingresados no es un numero")
         return NaN;
     }
 }
-var myRes = mySum2("Q",5);
+var myRes = mySum3("Q",5);
 console.log(myRes);
 
 /*
@@ -287,3 +296,57 @@ function validateInteger(myNum) {
     }
 }
 console.log(validateInteger(55.2));
+
+/*
+d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números
+sean enteros. En caso que haya decimales mostrar un alerta con elnerror y retorna el
+número convertido a entero (redondeado).
+*/
+
+function mySum4(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number') {
+        if (!validateInteger(num1)) { 
+            num1 = Math.round(num1);
+            alert("El primer parametro no era entero, se convirtio a: " + num1);
+            }
+        if (!validateInteger(num2)) {
+            num2 = Math.round(num2);
+            alert("El segundo parametro no era entero, se convirtio a: " + num2);
+        }
+        return num1 + num2;
+    } else {
+        alert("Al menos uno de los parametros ingresados no es un numero")
+        return NaN;
+    }
+}
+console.log(mySum4(600.5,6.01));
+
+/*
+e) Convertir la validación del ejercicio 6b) en una función separada y llamarla dentro de la
+función suma probando que todo siga funcionando igual.
+*/
+
+function validateNum(num1,num2) {
+    if (typeof(num1) === 'number' && typeof(num2) === 'number'){
+        return true;
+    } else {
+        alert("Al menos uno de los parametros ingresados no es un numero")
+        return false;
+    }
+}
+function mySum5(num1,num2) {
+    if (validateNum(num1,num2)) {
+        if (!validateInteger(num1)) {
+            num1 = Math.round(num1);
+            alert("El primer parametro no era entero, se convirtio a: " + num1);
+            }
+        if (!validateInteger(num2)) {
+            num2 = Math.round(num2);
+            alert("El segundo parametro no era entero, se convirtio a: " + num2);
+        }
+        return num1 + num2;
+    } else {
+        return NaN;
+    }
+}
+console.log(mySum5(6.5,10)); 
