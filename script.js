@@ -223,9 +223,9 @@ variable sentence. Al final mostrar una única alerta con la cadena completa.
 */
 
 var myArray = ["pen" , "pencil" , "eraser" , "ruler" , "square"];
-var sentence  = [];
+var sentence  = "";
 for (var i = 0; i < myArray.length; i++) {
-    sentence.push(myArray[i]);
+    sentence += myArray[i];
 }
 alert(sentence);
 
